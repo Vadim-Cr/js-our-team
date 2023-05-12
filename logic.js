@@ -42,6 +42,8 @@ const card = [
 
 //  todo MILESTONE 1:
 // todo Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+// todo MILESTONE 2:
+// todo Stampare le stesse informazioni su DOM sottoforma di stringhe
 // Select the container element
 const myCardContainer = document.querySelector(".container");
 
@@ -53,23 +55,24 @@ for (let i = 0; i < card.length; i++) {
   const divCardElement = document.createElement("div");
 
   // Create a new paragraph element with template literals
+  const pCardFotoElement = document.createElement("div");
   const pCardNameElement = document.createElement("p");
   const pCardRoleElement = document.createElement("p");
-  const pCardFotoElement = document.createElement("p");
 
+    pCardFotoElement.innerHTML = `<img src="/img/${card[i].immagine}" alt="${card[i].immagine}">`;
     pCardNameElement.textContent = `Nome: ${card[i].nome}}`;
     pCardRoleElement.textContent = `Ruolo: ${card[i].ruolo}`;
-    pCardFotoElement.textContent = `Foto: ${card[i].immagine}`;
 
   // Append the paragraph element to the div element
+  divCardElement.appendChild(pCardFotoElement);
   divCardElement.appendChild(pCardNameElement);
   divCardElement.appendChild(pCardRoleElement);
-  divCardElement.appendChild(pCardFotoElement);
 
   // Append the div element to the container
   myCardContainer.appendChild(divCardElement);
 };
-// MILESTONE 2:
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+// todo BONUS 1:
+// todo Trasformare la stringa foto in una immagine effettiva
 
 
