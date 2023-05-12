@@ -53,11 +53,18 @@ for (let i = 0; i < card.length; i++) {
   const divCardElement = document.createElement("div");
 
   // Create a new paragraph element with template literals
-  const pCardElement = document.createElement("p");
-  pCardElement.textContent = `Nome: ${card[i].nome}, Ruolo: ${card[i].ruolo}, Foto: ${card[i].immagine}`;
+  const pCardNameElement = document.createElement("p");
+  const pCardRoleElement = document.createElement("p");
+  const pCardFotoElement = document.createElement("p");
+
+    pCardNameElement.textContent = `Nome: ${card[i].nome}}`;
+    pCardRoleElement.textContent = `Ruolo: ${card[i].ruolo}`;
+    pCardFotoElement.textContent = `Foto: ${card[i].immagine}`;
 
   // Append the paragraph element to the div element
-  divCardElement.appendChild(pCardElement);
+  divCardElement.appendChild(pCardNameElement);
+  divCardElement.appendChild(pCardRoleElement);
+  divCardElement.appendChild(pCardFotoElement);
 
   // Append the div element to the container
   myCardContainer.appendChild(divCardElement);
