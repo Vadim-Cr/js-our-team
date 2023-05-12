@@ -60,13 +60,21 @@ for (let i = 0; i < card.length; i++) {
   const pCardRoleElement = document.createElement("p");
 
     pCardFotoElement.innerHTML = `<img src="/img/${card[i].immagine}" alt="${card[i].immagine}">`;
-    pCardNameElement.textContent = `Nome: ${card[i].nome}}`;
-    pCardRoleElement.textContent = `Ruolo: ${card[i].ruolo}`;
+    pCardNameElement.textContent = `${card[i].nome}}`;
+    pCardRoleElement.textContent = `${card[i].ruolo}`;
 
   // Append the paragraph element to the div element
   divCardElement.appendChild(pCardFotoElement);
   divCardElement.appendChild(pCardNameElement);
   divCardElement.appendChild(pCardRoleElement);
+
+  // add a class to the divCard
+    divCardElement.classList.add("card");
+
+  //add class to the name 
+    pCardNameElement.classList.add("my_name");
+  //add class to the role 
+    pCardRoleElement.classList.add("my_title");
 
   // Append the div element to the container
   myCardContainer.appendChild(divCardElement);
